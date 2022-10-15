@@ -19,10 +19,13 @@ jobs:
   job2:
     needs: setup
     runs-on: ubuntu-latest
+    outputs:
+      job2_result: ${{ steps.step.outputs.job2_result }}
     steps:
       - name: step
         run: |
           echo "do something2"
+          echo "::set-output name=job2_result::1234"
   job3:
     needs: setup
     runs-on: ubuntu-latest
