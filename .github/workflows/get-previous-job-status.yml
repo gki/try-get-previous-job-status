@@ -5,18 +5,21 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      run: |
-        echo "setup something"
-        echo "${{ toJSON(github) }}"
+      - name: step
+        run: |
+          echo "setup something"
+          echo "${{ toJSON(github) }}"
   job1:
     needs: setup
     runs-on: ubuntu-latest
     steps:
+      - name: step
       - run: echo "do something"
   check-result:
     needs: [job1]
     runs-on: ubuntu-latest
     steps:
-      run: |
-        echo "check something"
-        echo "${{ toJSON(needs) }}"
+      - name: step
+        run: |
+          echo "check something"
+          echo "${{ toJSON(needs) }}"
