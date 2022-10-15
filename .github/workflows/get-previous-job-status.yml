@@ -20,14 +20,14 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     outputs:
-      job2_result1: ${{ steps.step.outputs.job2_result }}
-      job2_result2: $JOB2_RESULT
+      output_via_command: ${{ steps.step.outputs.command_reesult }}
+      output_via_env: ${{ ENV_RESULT }}
     steps:
       - name: step
         run: |
           echo "do something2"
-          echo "::set-output name=job2_result::1234"
-          echo "JOB2_RESULT=5678" >> $GITHUB_ENV
+          echo "::set-output name=command_reesult::1234"
+          echo "ENV_RESULT=5678" >> $GITHUB_ENV
   job3:
     needs: setup
     runs-on: ubuntu-latest
