@@ -31,8 +31,16 @@ jobs:
         run: |
           echo "do something3"
           exit 1
+  job4:
+    needs: setup
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - name: step
+        run: |
+          echo "skip always"
   check-result:
-    needs: [job1]
+    needs: [job1, job2, job3]
     runs-on: ubuntu-latest
     steps:
       - name: step
