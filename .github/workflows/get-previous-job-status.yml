@@ -53,3 +53,4 @@ jobs:
         run: |
           echo "check something"
           echo "${{ toJSON(needs) }}"
+          echo "env.ENV_RESULT=${{ env.ENV_RESULT }}"
