@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       output_via_command: ${{ steps.step.outputs.command_reesult }}
-      output_via_env: ${{ ENV_RESULT }}
+      output_via_env: ${{ env.ENV_RESULT }}
     steps:
       - name: step
         run: |
