@@ -53,4 +53,4 @@ jobs:
         run: |
           echo "check something"
           echo "env.ENV_RESULT=${{ env.ENV_RESULT }}"
-          echo "${{ toJSON(needs) }}" | jq 'to_entries | map(.key + " " + .value.result) | join("\n")'
+          echo '${{ toJSON(needs) }}' | jq 'to_entries | map(.key + " " + .value.result) | join("\n")'
