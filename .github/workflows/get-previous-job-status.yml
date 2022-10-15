@@ -5,12 +5,12 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      run: echo "setup something"
+      - run: echo "setup something"
   job1:
     runs-on: ubuntu-latest
     steps:
-      run: echo "do something"
+      - run: echo "do something"
   check-result:
     runs-on: ubuntu-latest
     steps:
-      run: echo "check something"
+      - run: echo "check something"
