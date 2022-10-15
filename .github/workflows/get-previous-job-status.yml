@@ -15,7 +15,22 @@ jobs:
     steps:
       - name: step
         run: |
-          echo "do something"
+          echo "do something1"
+  job2:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: step
+        run: |
+          echo "do something2"
+  job3:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: step
+        run: |
+          echo "do something3"
+          exit 1
   check-result:
     needs: [job1]
     runs-on: ubuntu-latest
