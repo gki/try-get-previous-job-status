@@ -1,0 +1,16 @@
+on:
+  push:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "setup something"
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "do something"
+  check-result:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "check something"
