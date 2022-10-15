@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step
-      - run: echo "do something"
+        run: |
+          echo "do something"
   check-result:
     needs: [job1]
     runs-on: ubuntu-latest
