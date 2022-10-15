@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "do something2"
           echo "::set-output name=job2_result::1234"
-          echo "$JOB2_RESULT=5678" >> $GITHUB_ENV
+          echo "JOB2_RESULT=5678" >> $GITHUB_ENV
   job3:
     needs: setup
     runs-on: ubuntu-latest
