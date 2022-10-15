@@ -20,13 +20,13 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     outputs:
-      output_via_command: ${{ steps.step.outputs.command_reesult }}
+      output_via_command: ${{ steps.step.outputs.command_result }}
       output_via_env: ${{ env.ENV_RESULT }}
     steps:
       - name: step
         run: |
           echo "do something2"
-          echo "::set-output name=command_reesult::1234"
+          echo "::set-output name=command_result::1234"
           echo "ENV_RESULT=5678" >> $GITHUB_ENV
   job3:
     needs: setup
@@ -52,5 +52,5 @@ jobs:
       - name: step
         run: |
           echo "check something"
-          echo "env.ENV_RESULT=${{ env.ENV_RESULT }}"
+          echo '${{ toJSON(needs) }}'
           echo '${{ toJSON(needs) }}' | jq 'to_entries | map(.key + " " + .value.result) | join("\n")'
