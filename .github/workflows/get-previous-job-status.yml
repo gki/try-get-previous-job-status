@@ -40,7 +40,7 @@ jobs:
         run: |
           echo "skip always"
   check-result:
-    needs: [job1, job2, job3]
+    needs: [job1, job2, job3, job4]
     runs-on: ubuntu-latest
     steps:
       - name: step
