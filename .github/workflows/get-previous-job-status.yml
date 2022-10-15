@@ -41,6 +41,7 @@ jobs:
           echo "skip always"
   check-result:
     needs: [job1, job2, job3, job4]
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
       - name: step
