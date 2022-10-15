@@ -7,10 +7,12 @@ jobs:
     steps:
       - run: echo "setup something"
   job1:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - run: echo "do something"
   check-result:
+    needs: [job1]
     runs-on: ubuntu-latest
     steps:
       - run: echo "check something"
